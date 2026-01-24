@@ -1,31 +1,40 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "RP6502: run program",
-            "command": [
-                "python3",
-                "rp6502.py",
-                "-c",
-                "${workspaceFolder}/.rp6502",
-                "run",
-                "${command:cmake.launchTargetPath}.rp6502"
-            ],
-            "type": "shell",
-            "group": {
-                "kind": "build"
-            },
-            "presentation": {
-                "reveal": "silent",
-                "panel": "shared",
-                "focus": true
-            },
-            "options": {
-                "cwd": "${workspaceFolder}/tools"
-            },
-            "problemMatcher": []
-        },
-    ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: clang.exe build active file",
+			"command": "C:\\@prg\\llvm-mos\\bin\\clang.exe",
+			"args": [
+				"-fcolor-diagnostics",
+				"-fansi-escape-codes",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: C:\\@prg\\llvm-mos\\bin\\clang.exe"
+		},
+		{
+			"type": "cmake",
+			"label": "CMake: build",
+			"command": "build",
+			"targets": [
+				"all"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"detail": "CMake template build task"
+		}
+	]
 }

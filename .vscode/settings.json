@@ -1,0 +1,22 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "cmake.showSystemKits": false,
+    "cmake.preferredGenerators": [
+        "Ninja",
+        "Unix Makefiles",
+    ],
+    "cmake.options.advanced": {
+        "launch": {
+            "statusBarVisibility": "visible",
+        },
+        "debug": {
+            "statusBarVisibility": "visible",
+        }
+    },
+    "cmake.environment": {
+        "PATH": "C:/@prg/llvm-mos/bin:${env:PATH}"
+    },
+    "cmake.configureSettings": {
+        "CMAKE_PREFIX_PATH": "C:/@prg/llvm-mos/lib/cmake/llvm-mos-sdk"
+    }
+}

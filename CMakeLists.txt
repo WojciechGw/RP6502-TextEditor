@@ -1,10 +1,18 @@
 cmake_minimum_required(VERSION 3.18)
+
 add_subdirectory(tools)
+
 set(LLVM_MOS_PLATFORM rp6502)
+
 find_package(llvm-mos-sdk REQUIRED)
-project(MY-RP6502-PROJECT)
+
+project(RP6502-TEXTEDITOR LANGUAGES C CXX ASM)
+
 add_executable(te)
-rp6502_executable(te)
+rp6502_executable(te 
+    DATA file
+    RESET file
+)
 target_sources(te PRIVATE
 src/ezpsg.c
 src/display.c
