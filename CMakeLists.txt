@@ -6,13 +6,10 @@ set(LLVM_MOS_PLATFORM rp6502)
 
 find_package(llvm-mos-sdk REQUIRED)
 
-project(RP6502-TEXTEDITOR LANGUAGES C CXX ASM)
+project(RP6502-TEXTEDITOR C CXX ASM)
 
 add_executable(te)
-rp6502_executable(te 
-    DATA file
-    RESET file
-)
+rp6502_executable(te DATA file RESET file)
 target_sources(te PRIVATE
 src/ezpsg.c
 src/display.c
